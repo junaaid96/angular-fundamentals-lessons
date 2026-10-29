@@ -4,6 +4,10 @@ Hands-on lesson workspace for learning modern Angular, upgraded to **Angular 22*
 
 > Learning code based on the Frontend Masters course [Angular Fundamentals](https://frontendmasters.com/courses/angular-fundamentals/) by Mark Thompson. The lesson exercises and instructions come from that course material; this repo contains my coursework plus an upgrade to the latest Angular and extra concept notes.
 
+## Website
+
+Read every lesson, with its concept guide and source, as a searchable site: **[junaaid96.github.io/angular-fundamentals-lessons](https://junaaid96.github.io/angular-fundamentals-lessons/)**. It is built from this repo's Markdown by [`website/`](website/README.md) and deployed on each push to `main`.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/) 22.12+ or 24 LTS (recommended)
