@@ -23,3 +23,11 @@ ng serve 04-control-flow-if
 1. Confirm that your changes are correctly updated in the browser
 
 (BONUS) there may be a better way to write this conditionally? Which control flow command would you use for this?
+
+## Concept guide: Built-in control flow: @if
+
+`@if (cond) { ... } @else if (other) { ... } @else { ... }` replaces `*ngIf` and needs no imports.
+
+**Tip:** Use `@if (user(); as u)` to alias a value; `@switch` is cleaner when matching one value against many cases.
+
+**Check your work:** `ng build 04-control-flow-if` and `ng test 04-control-flow-if --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

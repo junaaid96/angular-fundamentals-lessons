@@ -1,11 +1,11 @@
+// Lesson 00-basic-app: Workspace & bootstrapping
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -41,3 +41,11 @@ ng serve 10-reactive-forms
 1. Save your changes.
 
 1. Confirm that your changes have been made in the browser. Open the browser console to confirm the message that your post has been successfully posted.
+
+## Concept guide: Reactive forms
+
+Model the form in TypeScript with `FormGroup`/`FormControl` (typed since Angular 14), bind with `[formGroup]` and `formControlName`, handle `(ngSubmit)`. Validators (`Validators.required`) and value streams are easy to test.
+
+**Tip:** `form.getRawValue()` returns a fully typed value.
+
+**Check your work:** `ng build 10-reactive-forms` and `ng test 10-reactive-forms --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

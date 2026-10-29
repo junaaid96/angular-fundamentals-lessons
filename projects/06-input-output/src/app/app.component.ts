@@ -1,10 +1,11 @@
+// Lesson 06-input-output: Signal inputs & outputs
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
 import { Car } from './car';
 import { ListingComponent } from "./listing/listing.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   template: `
     <h1>Saved Cars {{ savedCarList.length }}</h1>
     <section class="container">

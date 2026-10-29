@@ -33,3 +33,11 @@ ng serve 03-component-composition
 ```
 
 4. Navigate to `http://localhost:4200` and confirm that the application has been updated successfully.
+
+## Concept guide: Component composition
+
+Build UIs from small components: create one with `ng generate component <name> --project 03-component-composition`, add the class to the parent `imports` array, then use its selector (`<app-userinfo />`).
+
+**Tip:** Self-closing tags work for custom elements.
+
+**Check your work:** `ng build 03-component-composition` and `ng test 03-component-composition --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

@@ -1,11 +1,9 @@
+// Lesson 01-hello-angular: Templates & component styles
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
   template: `
     <h1>If you are reading this...</h1>
     <p>Things have worked out well! 🎉</p>

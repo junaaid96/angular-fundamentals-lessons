@@ -1,9 +1,10 @@
+// Lesson 03-component-composition: Component composition
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [UserinfoComponent],
   template: `
     <section class="menu">🏠 Home</section>

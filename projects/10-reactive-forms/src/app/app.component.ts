@@ -1,9 +1,10 @@
+// Lesson 10-reactive-forms: Reactive forms
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [ReactiveFormsModule],
   template: `
     <article>

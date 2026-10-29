@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, signal } from '@angular/core';
 import { Post } from '../data';
 
 @Component({
   selector: 'app-posts',
-  standalone: true,
-  imports: [CommonModule],
   template: `
-    @for(post of postData; track post.id) {
+    @for (post of postData(); track post.id) {
     <article class="post">
       <p class="title">{{ post.title }}</p>
       <p class="body">{{ post.body }}</p>
@@ -38,11 +35,12 @@ import { Post } from '../data';
   `,
 })
 export class PostsComponent implements OnInit {
-  protected postData: Post[] = [];
+  // A signal notifies Angular when the fetched posts arrive (required without zone.js).
+  protected readonly postData = signal<Post[]>([]);
 
   ngOnInit() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => response.json())
-      .then((data) => (this.postData = data));
+      .then((data: Post[]) => this.postData.set(data));
   }
 }

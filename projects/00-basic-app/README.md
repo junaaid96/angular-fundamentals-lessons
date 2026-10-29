@@ -34,3 +34,11 @@ ng serve 00-basic-app
 ```
 
 The application will properly load and be visible in the browser.
+
+## Concept guide: Workspace & bootstrapping
+
+`main.ts` calls `bootstrapApplication(AppComponent, appConfig)`. There is no NgModule: components are standalone by default (Angular 19+), and `appConfig` lists app-wide providers (router, zoneless change detection, error listeners).
+
+**Tip:** A component = TypeScript class + `@Component` metadata (selector, template, styles, imports).
+
+**Check your work:** `ng build 00-basic-app` and `ng test 00-basic-app --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

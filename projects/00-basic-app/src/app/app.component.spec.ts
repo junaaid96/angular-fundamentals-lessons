@@ -1,29 +1,27 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+import { AppComponent } from './app.component';
+import { appConfig } from './app.config';
+
+// Smoke test (Vitest via `ng test 00-basic-app`): the lesson's starter app boots
+// with the same zoneless providers used in main.ts and renders its template.
+describe('00-basic-app AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: appConfig.providers,
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('creates the component', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it(`should have the '00-basic-app' title`, () => {
+  it('renders the starter template', async () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('00-basic-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, 00-basic-app');
+    await fixture.whenStable();
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('h1')?.textContent).toContain('Hello, 00-basic-app');
   });
 });

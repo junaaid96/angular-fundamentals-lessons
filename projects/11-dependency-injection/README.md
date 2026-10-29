@@ -62,3 +62,11 @@ ng serve 11-dependency-injection
 1. Make dynamic routes to the a user page
 1. Pass data via the URL to the route using `@Input`
 1. Add a function to request the resource by id from the placeholder API.
+
+## Concept guide: Dependency injection
+
+Mark a class `@Injectable({ providedIn: 'root' })` to make a tree-shakable singleton, then get it with `inject(UserService)` in a field initializer (no constructor needed).
+
+**Tip:** Provide per-component instances with `providers: [UserService]` in the component metadata.
+
+**Check your work:** `ng build 11-dependency-injection` and `ng test 11-dependency-injection --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

@@ -23,3 +23,11 @@ ng serve 02-displaying-dynamic-data
    ```
 
 4. Confirm that the `item` data is propertly being displayed in the browser window.
+
+## Concept guide: Interpolation & property binding
+
+`{{ value }}` renders class fields as text. `[src]="url"` binds a DOM property to an expression; `(click)="handler()"` listens to events.
+
+**Tip:** Prefer `protected` fields for template-only state, and signals (`signal()`) for state that changes.
+
+**Check your work:** `ng build 02-displaying-dynamic-data` and `ng test 02-displaying-dynamic-data --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

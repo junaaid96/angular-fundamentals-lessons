@@ -1,34 +1,31 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input } from '@angular/core';
 import { Car } from '../car';
 
 @Component({
   selector: 'app-listing',
-  standalone: true,
-  imports: [CommonModule],
   template: ` 
   <article class="listing">
         <div class="image-parent">
           <img class="product-image" src="https://placehold.co/100x100" />
         </div>
         <section class="details">
-          <p class="title">{{ car.make }} {{ car.model }}</p>
+          <p class="title">{{ car().make }} {{ car().model }}</p>
           <hr />
           <p class="detail">
             <span>Year</span>
-            <span>{{car.year}}</span>
+            <span>{{ car().year }}</span>
           </p>
           <div class="detail">
             <span>Transmission</span>
-            <span>{{car.transmission}}</span>
+            <span>{{ car().transmission }}</span>
           </div>
           <p class="detail">
             <span>Mileage</span>
-            <span>{{car.miles}}</span>
+            <span>{{ car().miles }}</span>
           </p>
           <p class="detail">
             <span>Price</span>
-            <span>{{car.price}}</span>
+            <span>{{ car().price }}</span>
           </p>
         </section>
       </article>
@@ -36,7 +33,6 @@ import { Car } from '../car';
   styles: ``,
 })
 export class ListingComponent {
-  @Input({
-    required: true,
-  }) car!: Car;
+  /** Signal input (Angular 17.1+): read it in templates as car(). */
+  readonly car = input.required<Car>();
 }

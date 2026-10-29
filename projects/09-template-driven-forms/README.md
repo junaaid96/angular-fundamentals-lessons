@@ -45,3 +45,11 @@ ng serve 09-template-driven-forms
 1. Save your changes.
 
 1. Confirm in the browser that th properties are updated properly.
+
+## Concept guide: Template-driven forms
+
+Import `FormsModule` and use `[(ngModel)]="title"` for two-way binding between an input and a field. Quick for small forms; validation lives in the template.
+
+**Tip:** Every `ngModel` inside a `<form>` needs a `name` attribute.
+
+**Check your work:** `ng build 09-template-driven-forms` and `ng test 09-template-driven-forms --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

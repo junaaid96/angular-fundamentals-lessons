@@ -1,9 +1,10 @@
+// Lesson 05-control-flow-for: Built-in control flow: @for
+// Starter code for the exercise in ../../README.md; follow the steps there to complete it.
 import { Component } from '@angular/core';
 import { carList } from '../data/car-list';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   template: `
     <section class="container">
       <!-- This article element represents and entire listing -->
