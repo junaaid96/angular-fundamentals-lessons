@@ -24,3 +24,11 @@ ng serve 05-control-flow-for
 
 (Bonus) What should be displayed if the there are no items in the list? Which construct should we use?
 (Bonus) Try replacing images with the cars in the ones in the assets folder.
+
+## Concept guide: Built-in control flow: @for
+
+`@for (item of items; track item.id) { ... } @empty { ... }` replaces `*ngFor`. `track` is mandatory and lets Angular reuse DOM nodes efficiently.
+
+**Tip:** Context variables: `$index`, `$first`, `$last`, `$even`, `$odd`, `$count`.
+
+**Check your work:** `ng build 05-control-flow-for` and `ng test 05-control-flow-for --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

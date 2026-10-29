@@ -39,12 +39,13 @@ ng serve 08-routing-recap
 
 1. In, `details.component.ts`, create a property called `productId` of type `number`.
 
-1. In detail component define an `@Input` property called `id` and create `setter` function for it:
+1. In `app.config.ts`, enable route-param-to-input binding: `provideRouter(routes, withComponentInputBinding())`.
+
+1. In the details component define a signal input called `id` (it receives the `:id` route parameter) and derive the product from it:
 
    ```typescript
-   @Input() set id(value: number) {
-       this.productId = value;
-   }
+   readonly id = input.required<string>();
+   readonly product = computed(() => this.productList[Number(this.id())]);
    ```
 
 1. Update the `DetailsComponent` template to reference the product from the product list that at the indeces for `productId`.
@@ -52,3 +53,11 @@ ng serve 08-routing-recap
 1. Save your changes.
 
 1. Confirm that you can now route between products in the browser.
+
+## Concept guide: Route params & links
+
+`routerLink="/details/{{ $index }}"` navigates without reloads; `{ path: 'details/:id', component: DetailsComponent }` declares a param; `withComponentInputBinding()` passes params straight into signal inputs.
+
+**Tip:** Use `routerLinkActive` to style the current link.
+
+**Check your work:** `ng build 08-routing-recap` and `ng test 08-routing-recap --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

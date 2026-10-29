@@ -27,3 +27,11 @@ ng serve 01-hello-angular
 3. Make sure your app is running (`ng serve 01-hello-angular`) and confirm the output in the browser.
 
 Hints: use back tick characters for multi-line strings.
+
+## Concept guide: Templates & component styles
+
+Inline `template` and `styles` live in the component file. Styles are scoped to the component by default (emulated view encapsulation).
+
+**Tip:** Use backticks for multi-line templates; `:host` targets the component element itself.
+
+**Check your work:** `ng build 01-hello-angular` and `ng test 01-hello-angular --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

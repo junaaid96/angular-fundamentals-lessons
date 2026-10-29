@@ -1,61 +1,79 @@
 # Angular Fundamentals Lessons
 
-## What to install
+Hands-on lesson workspace for learning modern Angular, upgraded to **Angular 22** (standalone components, signals, zoneless change detection, built-in control flow, esbuild/Vite tooling and Vitest).
 
-- [Latest version of Node or Active LTS](https://nodejs.org/en/download/)
-- [Angular CLI](https://angular.dev/tools/cli/setup-local#install-the-angular-cli)
-- [Visual Studio Code](https://code.visualstudio.com/download)
-- [Angular Language Service Plugin for VS Code](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+> Learning code based on the Frontend Masters course [Angular Fundamentals](https://frontendmasters.com/courses/angular-fundamentals/) by Mark Thompson. The lesson exercises and instructions come from that course material; this repo contains my coursework plus an upgrade to the latest Angular and extra concept notes.
 
-## How to run these lesson
+## Prerequisites
 
-- Clone this repository to your local computer.
+- [Node.js](https://nodejs.org/en/download/) 22.12+ or 24 LTS (recommended)
+- npm 10+
+- [VS Code](https://code.visualstudio.com/) with the [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) extension (optional)
 
-```bash
-git clone git@github.com:marktechson/angular-fundamentals-lessons
-```
-
-- From the command line, in the root directory (angular-fundamentals-lessons) run the following command:
+## Getting started
 
 ```bash
-ng serve <lesson>
+git clone https://github.com/junaaid96/angular-fundamentals-lessons.git
+cd angular-fundamentals-lessons
+npm install
+npx ng serve 01-hello-angular   # open http://localhost:4200
 ```
 
-In order to run the first lesson, for example:
+Every lesson is its own Angular application in `projects/<lesson>`:
 
-```bash
-ng serve 01-hello-angular
-```
+| Command | What it does |
+| --- | --- |
+| `npx ng serve <lesson>` | Run a lesson with live reload |
+| `npx ng build <lesson>` | Production build to `dist/<lesson>` |
+| `npx ng test <lesson> --watch=false` | Run the lesson's Vitest tests |
+| `npm run build:all` | Build every lesson |
+| `npm run test:all` | Test every lesson |
 
-Then, open your browser to `http://localhost:4200` and you'll find the lesson.
+## Learning path
 
-## Solutions
+Work through the lessons in order. Each lesson README has the exercise steps and a short concept guide.
 
-- All of the solutions are on the `solutions branch. You can access them by using the following command:
+| # | Lesson | Concept |
+| --- | --- | --- |
+| 00 | [00-basic-app](projects/00-basic-app) | Workspace & bootstrapping |
+| 01 | [01-hello-angular](projects/01-hello-angular) | Templates & component styles |
+| 02 | [02-displaying-dynamic-data](projects/02-displaying-dynamic-data) | Interpolation & property binding |
+| 03 | [03-component-composition](projects/03-component-composition) | Component composition |
+| 04 | [04-control-flow-if](projects/04-control-flow-if) | Built-in control flow: @if |
+| 05 | [05-control-flow-for](projects/05-control-flow-for) | Built-in control flow: @for |
+| 06 | [06-input-output](projects/06-input-output) | Signal inputs & outputs |
+| 07 | [07-routing-basics](projects/07-routing-basics) | Routing basics |
+| 08 | [08-routing-recap](projects/08-routing-recap) | Route params & links |
+| 09 | [09-template-driven-forms](projects/09-template-driven-forms) | Template-driven forms |
+| 10 | [10-reactive-forms](projects/10-reactive-forms) | Reactive forms |
+| 11 | [11-dependency-injection](projects/11-dependency-injection) | Dependency injection |
+| 12 | [12-angular-signals](projects/12-angular-signals) | Signals |
+| 13 | [13-deferrable-views](projects/13-deferrable-views) | Deferrable views |
 
-```bash
-git checkout solutions
-```
+## Stack
 
-## Lesson Links
+| Tool | Version |
+| --- | --- |
+| Angular (core, router, forms) | 22.2 |
+| Angular CLI / `@angular/build` | 22.2 (esbuild + Vite dev server) |
+| TypeScript | 6.0 |
+| Test runner | Vitest 5 + jsdom |
+| Change detection | Zoneless (`provideZonelessChangeDetection`, no zone.js) |
 
-- [Lesson 01 - 01-hello-angular](projects/01-hello-angular)
-- [Lesson 02 - 02-displaying-dynamic-data](projects/02-displaying-dynamic-data)
-- [Lesson 03 - 03-component-composition](projects/03-component-composition)
-- [Lesson 04 - 04-control-flow-if](projects/04-control-flow-if)
-- [Lesson 05 - 05-control-flow-for](projects/05-control-flow-for)
-- [Lesson 06 - 06-input-output](projects/06-input-output)
-- [Lesson 07 - 07-routing-basics](projects/07-routing-basics)
-- [Lesson 08 - 08-routing-recap](projects/08-routing-recap)
-- [Lesson 09 - 09-template-driven-forms](projects/09-template-driven-forms)
-- [Lesson 10 - 10-reactive-forms](projects/10-reactive-forms)
-- [Lesson 11 - 11-dependency-injection](projects/11-dependency-injection)
-- [Lesson 12 - 12-angular-signals](projects/12-angular-signals)
-- [Lesson 13 - 13-deferrable-views](projects/13-deferrable-views)
+## What changed in the Angular 22 upgrade
+
+- Angular 17 → 22; `@angular-devkit/build-angular` replaced by `@angular/build`.
+- Karma/Jasmine replaced by the CLI's Vitest runner, with a smoke test in every lesson.
+- zone.js removed; apps are zoneless and use signals where state changes asynchronously.
+- `standalone: true` and unused `CommonModule` imports removed (standalone is the default).
+- Signal `input()` / `output()` instead of `@Input` / `@Output` decorators.
+- TypeScript 6 config with `"module": "preserve"` (bundler-style resolution).
 
 ## Helpful links
 
-- [Angular.dev playground](https://angular.dev/playground)
-- [Course slides (goo.gle/fem-slides)](https://goo.gle/fem-slides)
-- [Project Code(goo.gle/fem-code)](https://goo.gle/fem-code)
-# angular-frontendmasters
+- [angular.dev](https://angular.dev) docs and [playground](https://angular.dev/playground)
+- [Course slides](https://goo.gle/fem-slides) · [Original course code](https://goo.gle/fem-code)
+
+## License
+
+[MIT](LICENSE)

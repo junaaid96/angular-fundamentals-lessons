@@ -96,3 +96,11 @@ Create a Todolist application to showcase the `WritableSignal` produced by a cal
 ### BONUS
 
 1. Add a computed signal that calculates the number of completed todos.
+
+## Concept guide: Signals
+
+`signal(initial)` holds state; read with `todos()`, write with `.set()`/`.update()`. `computed()` derives values, `effect()` runs side effects. Signals drive zoneless change detection.
+
+**Tip:** Never mutate arrays in place: `todos.update(list => [...list, todo])`.
+
+**Check your work:** `ng build 12-angular-signals` and `ng test 12-angular-signals --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

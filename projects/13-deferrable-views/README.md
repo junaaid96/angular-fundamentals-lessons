@@ -28,3 +28,11 @@ ng serve 13-deferrable-views
    - `@error`
 1. Save your changes.
 1. Confirm the updates in the browser.
+
+## Concept guide: Deferrable views
+
+Wrap content in `@defer (on interaction(loadPosts)) { <app-posts /> } @placeholder { ... } @loading { ... }` to lazy-load a component's code only when needed.
+
+**Tip:** Triggers include `on viewport`, `on idle`, `on timer(2s)`, `on hover` and `when cond`; `prefetch on idle` downloads early.
+
+**Check your work:** `ng build 13-deferrable-views` and `ng test 13-deferrable-views --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).

@@ -35,3 +35,11 @@ ng serve 07-routing-basics
 1. Confirm that the updates are reflected in the browser. In this case you should see a greeting rendered in the browser.
 
 _Be sure to stop any previously running instances of the application_
+
+## Concept guide: Routing basics
+
+Define `Routes` (`{ path: '', component: GreetingsComponent }`), register them with `provideRouter(routes)` in `app.config.ts`, and render them with `<router-outlet />` (import `RouterOutlet`).
+
+**Tip:** Lazy-load with `loadComponent: () => import('./x').then(m => m.X)`.
+
+**Check your work:** `ng build 07-routing-basics` and `ng test 07-routing-basics --watch=false` (Vitest smoke test in `src/app/app.component.spec.ts`).
